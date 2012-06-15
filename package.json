@@ -1,0 +1,11 @@
+{
+    "name": "maucomm"
+  , "version": "0.0.1"
+  , "private": true
+  , "dependencies": { "faye": ""}
+  , "devDependencies" : {},
+  "engines" : {
+    "node": "0.6.x"
+  }
+
+}
