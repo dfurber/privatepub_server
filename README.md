@@ -21,8 +21,6 @@ Setting up a Private Pub [Faye Server](http://faye.jcoglan.com/) that's ready to
  * Follow instructions for deploying a node app to Heroku ([instructions here](https://devcenter.heroku.com/articles/nodejs)).
  
  * Load the production configuration to heroku: node heroku.js [/path/to/secrets.yml]
- 
- * Restart the Heroku app.
 
 
 
