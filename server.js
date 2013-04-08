@@ -1,9 +1,15 @@
 var http = require('http'),
-  faye = require('faye');
+  faye = require('faye'),
+  sha1 = require('sha1'),
+  privatePub = require('./private_pub');
 
-var bayeux = new faye.NodeAdapter({mount:YOUR_MOUNT_PREFIX_GOES_HERE});
+var port = process.env.PORT || 3030;
 
-port = process.env.PORT || 3030;
+var bayeux = new faye.NodeAdapter({mount:'/faye'});
+
+
+bayeux.addExtension(privatePub);
+
 
 var server = http.createServer(function(req,res) {
   res.writeHead(200, {'content-type': 'text/plain'});
