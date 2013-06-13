@@ -3,13 +3,12 @@ var secrets = require('./secrets').forEnvironment(path, 'development');
 
 
 if (!secrets.token || !secrets.server) {
-  console.log('No secrets found to load to Heroku.');
+  console.log('No secrets found to load.');
 } else {
   
-  var sys = require('sys');
-  var exec = require('child_process').exec;
-  function puts(error, stdout, stderr) { sys.puts(stdout) }
-  var command = "export PRIVATE_PUB_SECRET_TOKEN=" + secrets.token + " PRIVATE_PUB_SERVER=" + secrets.server;
-  exec(command, puts);
+  process.env.PRIVATE_PUB_SECRET_TOKEN = secrets.token;
+  process.env.PRIVATE_PUB_SERVER = secrets.server;
+  require('./server');
   
 }
+
