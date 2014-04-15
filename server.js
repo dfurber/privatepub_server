@@ -8,7 +8,7 @@ var bayeux = new faye.NodeAdapter({mount:'/faye'});
 bayeux.addExtension(privatePub);
 
 var server = http.createServer(function(req,res) {
-  res.writeHead(200, {'content-type': 'text/plain'});
+  res.writeHead(200, {'content-type': 'text/plain', 'Access-Control-Allow-Origin': '*' });
   res.write('Tune in to ' + port + 'MHz for the best funk around');
   res.end();
 });
