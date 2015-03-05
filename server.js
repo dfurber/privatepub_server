@@ -6,7 +6,7 @@ if (!process.env.PRIVATE_PUB_SERVER)
 {
   var yaml = require('js-yaml'),
       fs   = require('fs'),
-      path = process.env.CONF || './.env';
+      path = process.env.PRIVATE_PUB_CONF || './.env';
   
   try {
     var yamlFile = fs.readFileSync(path, 'utf8');
