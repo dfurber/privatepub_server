@@ -27,7 +27,13 @@ var bayeux = new faye.NodeAdapter({mount:'/faye'});
 bayeux.addExtension(privatePub);
 
 callback = function(req,res) {
-  res.writeHead(200, {'content-type': 'text/plain', 'Access-Control-Allow-Origin': '*' });
+  res.writeHead(200, {
+    'content-type': 'text/plain', 
+    'Access-Control-Allow-Origin': '*',
+    'Access-Control-Request-Method': '*',
+    'Access-Control-Allow-Methods': '*',
+    'Access-Control-Allow-Headers': '*'
+    });
   res.write('Tune in to ' + port + 'MHz for the best funk around');
   res.end();
 }
