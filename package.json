@@ -2,7 +2,7 @@
     "name": "maucomm"
   , "version": "0.0.1"
   , "private": true
-  , "dependencies": { "faye": "", "js-yaml": "", "sha1": ""}
+  , "dependencies": { "pm2": "", "faye": "", "js-yaml": "", "sha1": ""}
   , "devDependencies" : {},
   "engines" : {
     "node": "0.6.x"
